@@ -34,12 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.salva = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.canc = new System.Windows.Forms.Button();
             this.modifi = new System.Windows.Forms.Button();
             this.nome1 = new System.Windows.Forms.TextBox();
             this.prezzo2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.nome2 = new System.Windows.Forms.TextBox();
+            this.prez2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nome
@@ -95,23 +97,25 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
-            // button1
+            // canc
             // 
-            this.button1.Location = new System.Drawing.Point(15, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "cerca";
-            this.button1.UseVisualStyleBackColor = true;
+            this.canc.Location = new System.Drawing.Point(136, 151);
+            this.canc.Name = "canc";
+            this.canc.Size = new System.Drawing.Size(75, 23);
+            this.canc.TabIndex = 6;
+            this.canc.Text = "cancella";
+            this.canc.UseVisualStyleBackColor = true;
+            this.canc.Click += new System.EventHandler(this.canc_Click);
             // 
             // modifi
             // 
-            this.modifi.Location = new System.Drawing.Point(15, 122);
+            this.modifi.Location = new System.Drawing.Point(15, 151);
             this.modifi.Name = "modifi";
             this.modifi.Size = new System.Drawing.Size(75, 23);
             this.modifi.TabIndex = 7;
             this.modifi.Text = "modifica";
             this.modifi.UseVisualStyleBackColor = true;
+            this.modifi.Click += new System.EventHandler(this.modifi_Click);
             // 
             // nome1
             // 
@@ -145,17 +149,33 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Nome";
             // 
+            // nome2
+            // 
+            this.nome2.Location = new System.Drawing.Point(12, 122);
+            this.nome2.Name = "nome2";
+            this.nome2.Size = new System.Drawing.Size(100, 20);
+            this.nome2.TabIndex = 12;
+            // 
+            // prez2
+            // 
+            this.prez2.Location = new System.Drawing.Point(136, 122);
+            this.prez2.Name = "prez2";
+            this.prez2.Size = new System.Drawing.Size(100, 20);
+            this.prez2.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.prez2);
+            this.Controls.Add(this.nome2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.prezzo2);
             this.Controls.Add(this.nome1);
             this.Controls.Add(this.modifi);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.canc);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.salva);
             this.Controls.Add(this.label2);
@@ -178,12 +198,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button salva;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button canc;
         private System.Windows.Forms.Button modifi;
         private System.Windows.Forms.TextBox nome1;
         private System.Windows.Forms.TextBox prezzo2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox nome2;
+        private System.Windows.Forms.TextBox prez2;
     }
 }
 
