@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace strutture
@@ -42,7 +43,8 @@ namespace strutture
             p[dim].prezzo = float.Parse(prezzo.Text);
             dim++;
             visualizza(p);
-
+            nome.Text = "";
+            prezzo.Text = "";
         }
         public string prodString(prodotto p)
         {
@@ -64,6 +66,7 @@ namespace strutture
                 if (a == p[i].nome)
                 {
                     p[i].nome = nome2.Text;
+                    p[i].prezzo = float.Parse(prez2.Text);
                 }
             }
         }
@@ -72,25 +75,103 @@ namespace strutture
             for (int i = 0; i < dim; i++)
             {
                 string a = nome1.Text;
-                string b = prezzo2.Text;
                 if (a == p[i].nome)
                 {
-                    p[i].nome = p[i+1].nome;
-                    p[i].prezzo = p[i + 1].prezzo;
+                    p[i].nome = p[i + 1].nome;
+                    p[i].prezzo = p[i + 1].prezzo; 
                 }
             }
+            dim--;
         }
+        public float Somma(prodotto[] p)
+        {
+            float tot = 0;
+            for (int i = 0; i < dim; i++)
+            {
+                    tot += p[i].prezzo;
+            }
+            return tot;
+        }
+        public float Trovamax(prodotto[] p)
+        {
+            float max = 0;
+            for (int i = 0; i < dim; i++)
+            {
+                if (p[i].prezzo > max)
+                {
+                    max = p[i].prezzo;
+                }
+            }
+            return max;
+        }
+       public float Trovamin(prodotto[] p)
+       {
+           float min = 1000;
+           for (int i = 0; i < dim; i++)
+           {
+                if (p[i].prezzo<min)
+                {
+                    min = p[i].prezzo;
+                }
+           }
+            return min;
+       }
 
         private void modifi_Click(object sender, EventArgs e)
         {
             modifica();
             visualizza(p);
+            nome1.Text = "";
+            prezzo2.Text = "";
+            nome2.Text = "";
+            prez2.Text = "";
         }
         private void canc_Click(object sender, EventArgs e)
         {
             cancella();
             visualizza(p);
+            nome1.Text = "";
+            prezzo2.Text = "";
         }
-        
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void min_Click(object sender, EventArgs e)
+        {
+             MessageBox.Show($"{Trovamin(p).ToString()}");
+        }
+
+        private void sfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lfile_Click(object sender, EventArgs e)
+        {
+            //StreamReader FileDaL = new StreamReader(“FileDaLeggere.txt”);
+            //do
+            //{
+            //    riga = FileDaL.ReadLine();
+            //    if (riga != null)
+            //    {
+            //        MessageBox.Show(riga);
+            //    }
+            //}
+            //while (!FileDaL.EndOfStream);
+            //FileDaL.Close();
+        }
+
+        private void max_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{Trovamax(p).ToString()}");
+        }
+
+        private void totprezzo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Il totale è {Somma(p).ToString()}");
+        }
     }
 }
