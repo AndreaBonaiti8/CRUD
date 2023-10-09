@@ -50,6 +50,8 @@
             this.somperc = new System.Windows.Forms.Button();
             this.lfile = new System.Windows.Forms.Button();
             this.sfile = new System.Windows.Forms.Button();
+            this.perc = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nome
@@ -210,24 +212,27 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Ordine alfabetico";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // sotperc
             // 
-            this.sotperc.Location = new System.Drawing.Point(136, 342);
+            this.sotperc.Location = new System.Drawing.Point(136, 388);
             this.sotperc.Name = "sotperc";
             this.sotperc.Size = new System.Drawing.Size(100, 36);
             this.sotperc.TabIndex = 18;
             this.sotperc.Text = "sottrai percentuale";
             this.sotperc.UseVisualStyleBackColor = true;
+            this.sotperc.Click += new System.EventHandler(this.sotperc_Click);
             // 
             // somperc
             // 
-            this.somperc.Location = new System.Drawing.Point(12, 342);
+            this.somperc.Location = new System.Drawing.Point(12, 388);
             this.somperc.Name = "somperc";
             this.somperc.Size = new System.Drawing.Size(100, 36);
             this.somperc.TabIndex = 19;
             this.somperc.Text = "somma percentuale";
             this.somperc.UseVisualStyleBackColor = true;
+            this.somperc.Click += new System.EventHandler(this.somperc_Click);
             // 
             // lfile
             // 
@@ -249,11 +254,30 @@
             this.sfile.UseVisualStyleBackColor = true;
             this.sfile.Click += new System.EventHandler(this.sfile_Click);
             // 
+            // perc
+            // 
+            this.perc.Location = new System.Drawing.Point(12, 362);
+            this.perc.Name = "perc";
+            this.perc.Size = new System.Drawing.Size(100, 20);
+            this.perc.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 346);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(236, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Inserire la percentuale da sommare o da sottrarre";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.perc);
             this.Controls.Add(this.sfile);
             this.Controls.Add(this.lfile);
             this.Controls.Add(this.somperc);
@@ -308,6 +332,8 @@
         private System.Windows.Forms.Button somperc;
         private System.Windows.Forms.Button lfile;
         private System.Windows.Forms.Button sfile;
+        private System.Windows.Forms.TextBox perc;
+        private System.Windows.Forms.Label label5;
     }
 }
 
